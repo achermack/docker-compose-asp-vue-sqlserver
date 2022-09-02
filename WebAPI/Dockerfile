@@ -1,9 +1,7 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0
+FROM mcr.microsoft.com/dotnet/sdk
 COPY . /app
 WORKDIR /app
-RUN ["dotnet", "restore"]
-RUN ["dotnet", "build"]
-RUN dotnet tool install -g dotnet-ef
+RUN dotnet build && dotnet restore && dotnet tool install -g dotnet-ef
 ENV PATH $PATH:/root/.dotnet/tools
 ENV ASPNETCORE_URLS=http://*:80  
 EXPOSE 80
