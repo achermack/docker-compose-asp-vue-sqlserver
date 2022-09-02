@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 set -e
 run_cmd="dotnet watch run --server.urls http://*:80"
 
