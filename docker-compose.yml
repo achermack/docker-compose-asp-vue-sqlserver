@@ -11,3 +11,9 @@ services:
         environment:
             SA_PASSWORD: "Your_password123"
             ACCEPT_EULA: "Y"
+    client:
+        build: ./ClientApp
+        ports:
+            - "8080:8080"
+        depends_on:
+            - web
